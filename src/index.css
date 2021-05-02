@@ -1,3 +1,6 @@
 .height {
   min-height: 100vh;
 }
+.height-52 {
+  min-height: 52vh;
+}
