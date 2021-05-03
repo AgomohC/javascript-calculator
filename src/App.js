@@ -1,8 +1,32 @@
 import React from "react";
+import { useState } from "react";
 import Buttons from "./components/Buttons";
 import Display from "./components/Display";
 
 const App = () => {
+  const [display, setDisplay] = useState("");
+
+  const handleClick = (e) => {
+    if (e.target.innerText === "=") {
+      setDisplay(eval(display));
+    } else if (e.target.innerText === "AC") {
+      setDisplay("");
+    } else if (e.target.innerText === "CE") {
+      try {
+        setDisplay(display.slice(0, -1));
+      } catch (error) {
+        setDisplay("");
+      }
+    } else {
+      setDisplay(display + e.target.innerText);
+    }
+    if (display.length > 28) {
+      setDisplay(display.slice(0, 28));
+    }
+    console.log(display);
+    console.log(typeof e.target.innerText);
+  };
+
   return (
     <main className="bg-secondary">
       <div className="container">
@@ -11,8 +35,8 @@ const App = () => {
             <h5 className="text-center text-capitalize text-secondary mt-4">
               Javascript Calculator
             </h5>
-            <Display></Display>
-            <Buttons></Buttons>
+            <Display display={display}></Display>
+            <Buttons handleClick={handleClick}></Buttons>
           </section>
         </div>
       </div>

@@ -1,12 +1,11 @@
 import React from "react";
 
-const Display = () => {
+const Display = ({ display }) => {
   return (
     <article>
-      <input
-        type="text"
-        className="mx-auto form-control form-control-lg mt-3 bg-secondary text-light"
-      />
+      <div className="mx-auto form-control form-control-lg mt-3 bg-secondary text-light text-right">
+        {display}
+      </div>
     </article>
   );
 };
