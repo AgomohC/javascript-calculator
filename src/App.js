@@ -23,8 +23,6 @@ const App = () => {
     if (display.length > 28) {
       setDisplay(display.slice(0, 28));
     }
-    console.log(display);
-    console.log(typeof e.target.innerText);
   };
 
   return (
