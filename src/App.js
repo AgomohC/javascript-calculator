@@ -1,7 +1,7 @@
 import React from "react";
 import { useState } from "react";
-import Buttons from "./components/Buttons";
-import Display from "./components/Display";
+import Buttons from "./components/buttons";
+import Display from "./components/display";
 
 const App = () => {
   const [display, setDisplay] = useState("");
